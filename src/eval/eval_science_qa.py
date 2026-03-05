@@ -102,7 +102,8 @@ if __name__ == "__main__":
     multimodal_total = multimodal_correct + multimodal_incorrect
     ###### IMG ######
 
-    print(f'Total: {total}, Correct: {correct}, Accuracy: {correct / total * 100:.2f}%, IMG-Accuracy: {multimodal_correct / multimodal_total * 100:.2f}%')
+    img_acc_str = f'{multimodal_correct / multimodal_total * 100:.2f}%' if multimodal_total > 0 else 'N/A (no <image> tag in prompts)'
+    print(f'Total: {total}, Correct: {correct}, Accuracy: {correct / total * 100:.2f}%, IMG-Accuracy: {img_acc_str}')
 
     sqa_results['acc'] = correct / total * 100
     sqa_results['correct'] = correct
