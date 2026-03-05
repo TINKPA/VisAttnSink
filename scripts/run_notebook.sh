@@ -1,0 +1,7 @@
+#!/bin/bash
+eval "$(/home/antarachugh/miniconda3/bin/conda shell.bash hook)"
+conda activate visattnsink
+cd /home/antarachugh/idountang/VisAttnSink
+CUDA_VISIBLE_DEVICES=0 jupyter nbconvert --to notebook --execute --inplace \
+    --ExecutePreprocessor.timeout=600 \
+    notebooks/single_sample_analysis.ipynb
